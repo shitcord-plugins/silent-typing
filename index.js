@@ -1,9 +1,9 @@
-const { Plugin } = require('@vizality/entities');
-const { getModule } = require('@vizality/webpack');
+import { Plugin } from '@vizality/entities';
+import { getModule } from '@vizality/webpack';
 
 const typingModule = getModule('startTyping', 'stopTyping');
 
-module.exports = class SilentTyping extends Plugin {
+export default class SilentTyping extends Plugin {
   onStart () {
     this._startTyping = typingModule.startTyping;
     typingModule.startTyping = () => void 0;
