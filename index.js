@@ -4,12 +4,12 @@ import { getModule } from '@vizality/webpack';
 const typingModule = getModule('startTyping', 'stopTyping');
 
 export default class SilentTyping extends Plugin {
-  onStart () {
+  start () {
     this._startTyping = typingModule.startTyping;
     typingModule.startTyping = () => void 0;
   }
 
-  onStop () {
+  stop () {
     typingModule.startTyping = this._startTyping;
   }
 };
