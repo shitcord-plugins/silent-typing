@@ -1,0 +1,11 @@
+.silent-typing {
+   width: 25px;
+   height: 25px;
+   align-self: center;
+   color: var(--interactive-normal);
+   cursor: pointer;
+
+   &.disabled {
+      color: var(--interactive-muted);
+   }
+}
